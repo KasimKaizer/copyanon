@@ -1,0 +1,20 @@
+{{define "title"}}Home{{end}} {{define "main"}}
+<h2>Latest Gists</h2>
+{{if .Gists}}
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>ID</th>
+  </tr>
+  {{range .Gists}}
+  <tr>
+    <td><a href="/gist/view?id={{.ID}}">{{.Title}}</a></td>
+    <td>{{.Created}}</td>
+    <td>#{{.ID}}</td>
+  </tr>
+  {{end}}
+</table>
+{{else}}
+<p>There's nothing to see here!</p>
+{{end}} {{end}}
